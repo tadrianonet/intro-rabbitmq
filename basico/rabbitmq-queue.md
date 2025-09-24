@@ -112,22 +112,6 @@ Unacked → Ready (NACK recebido)
 
 **Imagem sugerida:** Diagrama de estados como um grafo direcionado, com círculos representando estados e setas mostrando transições possíveis.
 
-## 📈 **Métricas e Monitoramento**
-
-### Métricas Essenciais:
-- **Message Count**: Número de mensagens na queue
-- **Consumer Count**: Quantos consumers estão conectados
-- **Message Rate**: Taxa de entrada e saída de mensagens
-- **Unacked Messages**: Mensagens enviadas mas não confirmadas
-
-### Alertas Importantes:
-- **Queue muito cheia**: Pode indicar consumer lento
-- **Sem consumers**: Mensagens acumulando sem processamento
-- **Taxa de erro alta**: Problemas na aplicação consumidora
-- **Memory pressure**: Queue usando muita memória
-
-**Imagem sugerida:** Dashboard estilo semáforo com indicadores verdes, amarelos e vermelhos para diferentes métricas, facilitando identificação rápida de problemas.
-
 ## 🚨 **Problemas Comuns e Soluções**
 
 ### 1. **Queue Bloat (Acúmulo de Mensagens)**
@@ -166,27 +150,6 @@ Unacked → Ready (NACK recebido)
 
 **Imagem sugerida:** Três diagramas separados mostrando cada padrão: Priority (mensagens com números de prioridade), Delayed (relógio indicando tempo), Work (múltiplos workers conectados à mesma queue).
 
-## 🏗️ **Decisões de Design**
-
-### Quando usar cada tipo:
-
-**Classic Queue**:
-- ✅ Aplicações simples
-- ✅ Throughput moderado
-- ✅ Compatibilidade com versões antigas
-
-**Quorum Queue**:
-- ✅ Dados críticos
-- ✅ Alta disponibilidade necessária
-- ✅ Consistência importante
-
-**Stream Queue**:
-- ✅ High throughput
-- ✅ Retenção por tempo
-- ✅ Múltiplos consumers para mesmos dados
-
-**Imagem sugerida:** Árvore de decisão visual ajudando a escolher o tipo correto de queue baseado nos requisitos do projeto.
-
 ## 📚 **Resumo para Alunos**
 
 ### Pontos-Chave das Queues:
@@ -196,22 +159,14 @@ Unacked → Ready (NACK recebido)
 ✅ **Diferentes tipos** para diferentes necessidades  
 ✅ **Configurações flexíveis** para controle de recursos  
 ✅ **Monitoramento essencial** para manter performance  
-✅ **Padrões avançados** para casos específicos  
 
 ### Conceitos Fundamentais:
 - **FIFO**: Primeira mensagem a entrar é a primeira a sair
 - **Durabilidade**: Configurar baseado na criticidade dos dados
 - **TTL**: Controlar tempo de vida para evitar acúmulo
 - **DLX**: Sempre ter estratégia para mensagens problemáticas
-- **Monitoring**: Observar métricas continuamente
 
-### Dicas Práticas:
-- **Escolha o tipo certo** para sua necessidade
-- **Configure limites** para evitar problemas de recursos
-- **Monitore sempre** para detectar problemas cedo
-- **Teste cenários de falha** antes de colocar em produção
-
-**Imagem sugerida:** Mapa mental visual conectando todos os conceitos principais da Queue, facilitando a visão geral do componente.
+**Imagem sugerida:** Mapa mental visual conectando todos os conceitos principais da Queue.
 
 ---
 
